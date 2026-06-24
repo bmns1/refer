@@ -267,7 +267,7 @@ body {
   gap: 6px;
 }
 .fine summary::-webkit-details-marker { display: none; }
-.fine summary::after { content: '↓'; transition: transform 0.2s; font-size: 11px; }
+.fine summary::after { content: 'â†“'; transition: transform 0.2s; font-size: 11px; }
 .fine[open] summary::after { transform: rotate(180deg); }
 .fine ul {
   margin: 12px 0 0;
