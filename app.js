@@ -2,7 +2,7 @@
  * SVA Referral — Frontend
  * Paste your deployed Apps Script Web App URL into API_URL below.
  */
-const API_URL = 'https://script.google.com/macros/s/AKfycbx8k7d8H4KqkT6FUHveHT574OjWDI7qXzjd5ICx3tqemr6aPEhYZ3I_UAv4j42M9j94Rw/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzmYSXHGF6WhQJxvU8b8havA80g9slONmjYd5RQ7FfTqWIYdxmkm0chpLKJvOxEwzCnQA/exec';
 
 const els = {
   yearSpan: document.getElementById('year'),
