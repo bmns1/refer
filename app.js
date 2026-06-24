@@ -55,7 +55,7 @@ async function loadConfig() {
     const res = await fetch(API_URL);
     const data = await res.json();
     if (!data.ok) throw new Error(data.error || 'Could not load configuration.');
-    const allGrades = data.allGrades || [];
+    const allGrades = ["Pre-K","Kindergarten","Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","High School"];
     const openGrades = data.grades || [];
     fillSelect(els.currentGradeSelect, allGrades, 'Select a grade…');
     fillSelect(els.prospectiveGradeSelect, openGrades, openGrades.length ? 'Select a grade…' : 'No grades with open spots');
