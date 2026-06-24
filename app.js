@@ -55,8 +55,10 @@ async function loadConfig() {
     const res = await fetch(API_URL);
     const data = await res.json();
     if (!data.ok) throw new Error(data.error || 'Could not load configuration.');
-    fillSelect(els.currentGradeSelect, data.grades, 'Select a grade…');
-    fillSelect(els.prospectiveGradeSelect, data.grades, 'Select a grade…');
+    const allGrades = data.allGrades || data.grades || [];
+    const openGrades = data.grades || [];
+    fillSelect(els.currentGradeSelect, allGrades, 'Select a grade…');
+    fillSelect(els.prospectiveGradeSelect, openGrades, openGrades.length ? 'Select a grade…' : 'No grades with open spots');
     fillSelect(els.candidatePositionSelect, data.positions, 'Select a position…');
     renderPositions(data.positions);
   } catch (err) {
