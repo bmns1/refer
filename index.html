@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a2a87" />
+  <title>Silicon Valley Academy — Referrals</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/parent-portal/main/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="https://www.svaportal.com" class="brand">
+        <img src="https://raw.githubusercontent.com/bmns1/parent-portal/main/logo.png" alt="Silicon Valley Academy" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">Silicon Valley Academy</span>
+          <span class="brand-sub">Referral Program</span>
+        </span>
+      </a>
+      <a href="mailto:admin@svamail.com" class="header-link">Contact</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Building a strong school community together</span>
+      <h1>Refer a family. Earn <span class="accent">$750</span>.</h1>
+      <p>Help grow the SVA community — refer a new family for tuition credit, or recommend an exceptional teacher.</p>
+    </div>
+  </section>
+
+  <main class="container main">
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="family">Refer a Family</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="teacher">Refer a Teacher</button>
+    </div>
+
+    <!-- ============== FAMILY ============== -->
+    <section id="panel-family" class="panel active" role="tabpanel">
+      <div class="info-card">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><span class="step-num">1</span><div><strong>You refer</strong><span>Share a family you think would love SVA.</span></div></li>
+          <li><span class="step-num">2</span><div><strong>They enroll</strong><span>Family completes admissions and sets up payment.</span></div></li>
+          <li><span class="step-num">3</span><div><strong>You earn $750</strong><span>Credit applied to your account by Oct 31.</span></div></li>
+        </ol>
+        <details class="fine">
+          <summary>Program terms</summary>
+          <ul>
+            <li>Referring family must be currently enrolled at SVA.</li>
+            <li>One $750 credit per family, per calendar year.</li>
+            <li>Referred family must complete admissions, be accepted, and finalize enrollment.</li>
+            <li>Credit is non-transferable and not redeemable for cash.</li>
+            <li>Referrals must be submitted before the family begins an application.</li>
+          </ul>
+        </details>
+      </div>
+
+      <form id="family-form" class="form-card" novalidate>
+        <div class="form-head">
+          <h2>Submit a referral</h2>
+          <p>Takes about 2 minutes.</p>
+        </div>
+
+        <div class="section">
+          <h3>About you</h3>
+          <div class="grid">
+            <label class="field">Your name<input name="referrerName" required autocomplete="name" /></label>
+            <label class="field">Email<input name="referrerEmail" type="email" required autocomplete="email" /></label>
+            <label class="field">Phone<input name="referrerPhone" type="tel" required autocomplete="tel" /></label>
+            <label class="field">Your child at SVA<input name="currentStudentName" required /></label>
+            <label class="field full">Their grade
+              <select name="currentStudentGrade" required>
+                <option value="">Select…</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>The family you're referring</h3>
+          <div class="grid">
+            <label class="field">Parent name<input name="prospectiveParentName" required /></label>
+            <label class="field">Parent email<input name="prospectiveParentEmail" type="email" required /></label>
+            <label class="field">Parent phone<input name="prospectiveParentPhone" type="tel" required /></label>
+            <label class="field">Prospective student<input name="prospectiveStudentName" required /></label>
+            <label class="field full">Grade applying for
+              <select name="prospectiveGrade" required>
+                <option value="">Loading…</option>
+              </select>
+            </label>
+            <label class="field full">Anything else? <span class="optional">Optional</span>
+              <textarea name="notes" rows="3" placeholder="How you know them, areas of interest…"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="acks">
+          <label class="check"><input type="checkbox" name="consentShareContact" required />
+            <span>I have the family's permission to share their contact info.</span>
+          </label>
+          <label class="check"><input type="checkbox" name="consentProgramTerms" required />
+            <span>I've read and agree to the program terms.</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Submit referral</button>
+          <p class="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
+    <!-- ============== TEACHER ============== -->
+    <section id="panel-teacher" class="panel" role="tabpanel" hidden>
+      <div class="info-card">
+        <h2>Open roles</h2>
+        <div id="positions-list" class="positions">Loading…</div>
+        <p class="fine-print">Candidates will be invited to apply through careers@svamail.com.</p>
+      </div>
+
+      <form id="teacher-form" class="form-card" novalidate>
+        <div class="form-head">
+          <h2>Recommend an educator</h2>
+          <p>We'll reach out to them directly.</p>
+        </div>
+
+        <div class="section">
+          <h3>About you</h3>
+          <div class="grid">
+            <label class="field">Your name<input name="referrerName" required autocomplete="name" /></label>
+            <label class="field">Email<input name="referrerEmail" type="email" required autocomplete="email" /></label>
+            <label class="field">Your role
+              <select name="referrerRole" required>
+                <option value="">Select…</option>
+                <option>Parent</option>
+                <option>Teacher</option>
+                <option>Staff</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="field">Phone <span class="optional">Optional</span><input name="referrerPhone" type="tel" /></label>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>The candidate</h3>
+          <div class="grid">
+            <label class="field">Full name<input name="candidateName" required /></label>
+            <label class="field">Email<input name="candidateEmail" type="email" required /></label>
+            <label class="field">Phone <span class="optional">Optional</span><input name="candidatePhone" type="tel" /></label>
+            <label class="field">Years teaching <span class="optional">Optional</span><input name="yearsExperience" type="number" min="0" max="60" /></label>
+            <label class="field full">Position
+              <select name="candidatePosition" required>
+                <option value="">Loading…</option>
+              </select>
+            </label>
+            <label class="field full">Why them?
+              <textarea name="recommendationReason" rows="4" required placeholder="A few sentences on their strengths and fit."></textarea>
+            </label>
+            <label class="field full file-field">
+              <span class="file-label">Resume <span class="optional">Optional · PDF or Word</span></span>
+              <input name="resume" type="file" accept=".pdf,.doc,.docx" />
+            </label>
+          </div>
+        </div>
+
+        <div class="acks">
+          <label class="check"><input type="checkbox" name="consentShareContact" required />
+            <span>I have the candidate's permission to share their info and resume.</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Submit referral</button>
+          <p class="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> SVA</span>
+      <a href="mailto:admin@svamail.com">admin@svamail.com</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
